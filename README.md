@@ -5,7 +5,7 @@
 ![Platform: Kestra](https://img.shields.io/badge/platform-Kestra-3866F4?style=flat-square)
 ![Execution model](https://img.shields.io/badge/model-deterministic-1B5E20?style=flat-square)
 ![Committed tasks](https://img.shields.io/badge/committed%20tasks-5%20root%20%2B%204%20branch-6A1B9A?style=flat-square)
-![Track 2 — submission target](https://img.shields.io/badge/Hacktoberfest-2026%20Track%202%20target-1F6FEB?style=flat-square)
+![Track 2 — submission target](https://img.shields.io/badge/HACKTOBER-2026%20Track%202%20target-1F6FEB?style=flat-square)
 ![License](https://img.shields.io/badge/license-TODO-lightgrey?style=flat-square)
 
 **Mutant AI** is an open-source **Kestra Blueprint** for autonomous infrastructure resilience missions: one declarative flow that accepts a mutation scenario and a recovery policy, passes both through deterministic safety gates, authorizes bounded recovery, and records an ordered mission audit — inside an explicitly sandboxed scope.
@@ -19,7 +19,7 @@
 > Two sources of truth exist in this repository, and they do not fully agree:
 > 1. **The committed YAML** ([`flows/mutant-ai-autonomous-resilience.yaml`](flows/mutant-ai-autonomous-resilience.yaml)) defines **5 root tasks + 4 branch tasks**, all `Log`/`If` core tasks. It is the only implementation anyone can review, import, and reproduce from this repo.
 > 2. **A maintainer-reported sandbox execution** on a working Kestra instance shows **32 succeeded tasks in 25.05 s** with a `disk_pressure` scenario, rollback, verification, cleanup, a `MISSION_COMPLETE` status, a 92/100 resilience score, and KV Store mission-history keys. That richer task graph is **not present in the committed YAML**, so those runtime results **cannot be reproduced or audited from this repository today**.
-> This README documents the committed implementation precisely, reports the execution evidence with explicit verification status, and treats the source-vs-deployment gap as a first-class [submission-readiness gap](#hacktoberfest-2026-track-2--submission-readiness). Nothing here claims production remediation, LLM reasoning, or official endorsement.
+> This README documents the committed implementation precisely, reports the execution evidence with explicit verification status, and treats the source-vs-deployment gap as a first-class [submission-readiness gap](#hacktober-2026-track-2--submission-readiness). Nothing here claims production remediation, LLM reasoning, or official endorsement.
 
 ### Blueprint at a glance
 
@@ -43,7 +43,7 @@
 - [Architecture](#architecture)
 - [Autonomy and Safety](#autonomy-and-safety)
 - [Execution Evidence](#execution-evidence)
-- [Hacktoberfest 2026 Track 2 — Submission Readiness](#hacktoberfest-2026-track-2--submission-readiness)
+- [HACKTOBER 2026 Track 2 — Submission Readiness](#hacktober-2026-track-2--submission-readiness)
 - [Prerequisites](#prerequisites)
 - [Installation and Quick Start](#installation-and-quick-start)
 - [Configuration Reference](#configuration-reference)
@@ -210,9 +210,9 @@ The following results were reported from a working Kestra instance running a san
 
 ---
 
-## Hacktoberfest 2026 Track 2 — Submission Readiness
+## HACKTOBER 2026 Track 2 — Submission Readiness
 
-This project **targets** Kestra's [Hacktoberfest 2026](https://kestra.io/hacktober) **Track 2 — "Build a Flow Other People Will Reuse"** ([blueprints catalog](https://github.com/kestra-io/blueprints)). It has **not** been submitted, accepted, merged, sponsored, or endorsed; nothing here implies official approval.
+This project **targets** Kestra's [HACKTOBER 2026](https://kestra.io/hacktober) **Track 2 — "Build a Flow Other People Will Reuse"** ([blueprints catalog](https://github.com/kestra-io/blueprints)). It has **not** been submitted, accepted, merged, sponsored, or endorsed; nothing here implies official approval.
 
 Criteria verified against the official track page and the committed YAML:
 
@@ -331,7 +331,7 @@ Four statuses that are **not** interchangeable:
 | Kestra execution success | All executed tasks completed — note the *blocked* path also finishes **successfully**, because it only logs | Yes — expected on every run today |
 | Mission-level `MISSION_COMPLETE` | Terminal mission marker | **Reported** in the maintainer sandbox run; **not** in committed YAML (which ends at `FOUNDATION READY`) |
 | Resilience score (e.g. 92/100) | Composite mission score | **Reported** in the maintainer sandbox run; **no scoring task** in committed YAML |
-| Official acceptance | Kestra / Hacktoberfest endorsement | **No** — nothing here implies it |
+| Official acceptance | Kestra / HACKTOBER endorsement | **No** — nothing here implies it |
 
 ---
 
@@ -427,7 +427,7 @@ foundation_ready
 
 ## Contributing
 
-Contributions are welcome — this Blueprint targets the Kestra Hacktoberfest 2026 Track 2 catalog (*Build a Flow Other People Will Reuse*).
+Contributions are welcome — this Blueprint targets the Kestra HACKTOBER 2026 Track 2 catalog (*Build a Flow Other People Will Reuse*).
 
 1. **Fork** and branch (e.g. `feat/enforcing-safety-gate`).
 2. **Keep the flow valid.** Import your change into a Kestra instance and confirm validation passes before opening a PR.
@@ -448,5 +448,5 @@ Contributions are welcome — this Blueprint targets the Kestra Hacktoberfest 20
 **Acknowledgments**
 
 - [Kestra](https://kestra.io) — the declarative workflow orchestration engine this Blueprint runs on.
-- [Kestra Hacktoberfest 2026](https://kestra.io/hacktober) — Track 2: *Build a Flow Other People Will Reuse*; Blueprints land in [kestra-io/blueprints](https://github.com/kestra-io/blueprints).
+- [Kestra HACKTOBER 2026](https://kestra.io/hacktober) — Track 2: *Build a Flow Other People Will Reuse*; Blueprints land in [kestra-io/blueprints](https://github.com/kestra-io/blueprints).
 - Every reviewer who checks the claims in this README against `flows/mutant-ai-autonomous-resilience.yaml` — that is exactly the review this Blueprint is designed to survive.
